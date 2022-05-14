@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>To Do List</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div id="List_main">
+      <h2>
+        <p align="center">To Do List</p>
+      </h2>
+      <div id="List_Add">
+        <input
+          type="text"
+          class="Todo_text"
+          placeholder="할 일을 입력해주세요"
+        />
+        <button type="submit" id="btn_Add">+</button>
+      </div>
+
+      <div id="List_Todo_Main">
+        <p id="List_Todo_Title">할일</p>
+        <ul class="List_Todo_ul">
+          <li class="List_Todo_li">
+            <input type="checkbox" class="Todo_checkbox" />
+            <span class="item_in_box">Todo Thing1display: flex; </span>
+            <button type="button" class="Todo_del">💩</button>
+          </li>
+          <li class="List_Todo_li">
+            <input type="checkbox" class="Todo_checkbox" />
+            <span class="item_in_box">Todo Thing2</span>
+            <button type="button" class="Todo_del">💩</button>
+          </li>
+          <li class="List_Todo_li">
+            <input type="checkbox" class="Todo_checkbox" />
+            <span class="item_in_box">Todo Thing3</span>
+            <button type="button" class="Todo_del">💩</button>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <script type="text/javascript" src="todo.js"></script>
+  </body>
+</html>
