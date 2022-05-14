@@ -1,0 +1,98 @@
+body,
+button,
+input {
+  font-family: "Nanum Gothic", sans-serif;
+  font-size: 18px;
+}
+
+#List_main {
+  max-width: 500px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  padding: 50px 0px 0px 0px;
+}
+
+#List_Add {
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.Todo_text {
+  flex: 1;
+  border: none;
+  padding: 10px;
+  height: 50px;
+  box-sizing: border-box;
+}
+
+#btn_Add {
+  border: none;
+  border-radius: 5px;
+  background: linear-gradient(
+    0deg,
+    rgba(255, 151, 0, 1) 0%,
+    rgba(251, 75, 2, 1) 100%
+  );
+  color: #005bea;
+  height: 50px;
+  width: 50px;
+  font-weight: bold;
+}
+
+#btn_Add:hover {
+  cursor: pointer;
+  background-color: #f0ecfc;
+  background-image: linear-gradient(315deg, #f0ecfc 0%, #c797eb 74%);
+}
+
+#List_Todo_Main {
+  display: flex;
+  flex-direction: column;
+}
+
+#List_Todo_Title {
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.List_Todo_ul {
+  list-style: none;
+  /* display: flex; */
+  flex-direction: column;
+  padding: 0px;
+  margin: 0px;
+}
+
+.List_Todo_li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+  height: 36px;
+}
+
+.List_Todo_li:last-child {
+  margin-bottom: 0;
+}
+
+.item_in_box {
+  flex: 1;
+}
+.Todo_checkbox {
+  margin-right: 10px;
+}
+
+.Todo_del {
+  border: none;
+  border-radius: 5px;
+  height: 30px;
+  width: 30px;
+  background-color: white;
+}
+
+.Todo_del:hover {
+  cursor: pointer;
+  background-color: #d0ebff;
+}
