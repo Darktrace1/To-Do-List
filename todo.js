@@ -1,7 +1,18 @@
 document.getElementById("btn_Add").addEventListener("click", CheckText);
 document.querySelector(".Todo_text").addEventListener("keypress", EnterKey);
-const Todo_text = document.querySelector(".Todo_text");
-const list = document.querySelector(".List_Todo_ul");
+let listCheck = document.querySelectorAll(".Todo_checkbox");
+let delButton = document.querySelectorAll(".Todo_del");
+let Todo_text = document.querySelector(".Todo_text");
+let list = document.querySelector(".List_Todo_ul");
+let list_li = document.querySelectorAll(".List_Todo_li");
+
+const TODOLIST_DATA = "toDoList";
+
+function loadToDoList() {
+  const loadedToDoList = localStorage.getItem(TODOLIST_DATA);
+  if (loadedToDoList !== null) {
+  }
+}
 
 function CheckText() {
   const err = "할일을 입력해주세요";
@@ -9,6 +20,8 @@ function CheckText() {
     alert(err);
   } else {
     AddDo();
+    completeTodo();
+    delTodo();
   }
 }
 
@@ -16,6 +29,8 @@ function EnterKey(e) {
   if (e.key === "Enter") {
     CheckText();
   }
+  completeTodo();
+  delTodo();
 }
 
 function AddDo() {
@@ -33,13 +48,38 @@ function PaintTodo(newTodo) {
   list.appendChild(li);
 }
 
-const thisTodo = document.get(".Todo_checkbox");
+function completeTodo() {
+  listCheck = document.querySelectorAll(".Todo_checkbox");
+  list_li = document.querySelectorAll(".List_Todo_li");
+  listCheck.forEach((thisone, index) =>
+    thisone.addEventListener("click", function () {
+      if (thisone.checked === true) {
+        list_li[index].style.textDecoration = "line-through";
+        list_li[index].style.opacity = "0.3";
+      } else {
+        list_li[index].style.textDecoration = "none";
+        list_li[index].style.opacity = "1";
+      }
+    })
+  );
+}
 
-thisTodo.addEventListener("click", function () {
-  // for(let i = 0; i < )
-  alert("Hello");
-});
+function delTodo() {
+  delButton = document.querySelectorAll(".Todo_del");
+  list_li = document.querySelectorAll(".List_Todo_li");
 
-// function init() {}
+  delButton.forEach((delEl, index) =>
+    delEl.addEventListener("click", function () {
+      list_li[index].remove();
+    })
+  );
+}
 
-// init();
+function init() {
+  //loadToDoList();
+  completeTodo();
+  delTodo();
+}
+
+init();
+
